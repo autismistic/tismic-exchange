@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tismic Exchange</title>
+<meta name="description" content="The emote stock market for LordTismic's Twitch chat. Prices move with chat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#050807; --panel:#0b100e; --fg:#c6cec7; --dim:#76857b; --line:#8a958d; --rule:#26302b;
+  --blue:#0000aa; --blue-fg:#ffffff; --yellow:#ffff55; --cyan:#55ffff;
+  --up:#55ff55; --down:#ff5555; --sel:#0d2a2a;
+  --f-display:"VT323","Courier New",monospace;
+  --f-body:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg)}
+body{font-family:var(--f-body);font-size:14px;line-height:1.45;font-variant-numeric:tabular-nums}
+img{max-width:100%}
+[hidden]{display:none!important}
+.gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+.bar{position:sticky;top:0;z-index:5;background:var(--blue);color:var(--blue-fg);padding-top:env(safe-area-inset-top,0px)}
+.bar-in{display:flex;flex-wrap:wrap;align-items:center;gap:4px 20px;padding-block:6px;font-family:var(--f-display);font-size:22px;line-height:1.1}
+.brand{color:var(--yellow);letter-spacing:.04em}
+.status{display:inline-flex;align-items:center;gap:8px}
+.lamp{display:inline-block;padding:0 8px;background:var(--dim);color:#000}
+.lamp.open{background:var(--up);color:#001000}
+.lamp.closed{background:var(--down);color:#200000}
+.bar .sp{flex:1}
+.clock{color:var(--cyan)}
+
+.tape{overflow:hidden;border-bottom:1px solid var(--line);background:#000;white-space:nowrap;min-height:29px}
+.tape-track{display:inline-block;padding-block:5px;animation:tape 60s linear infinite;font-size:13px}
+.tape-track span{margin-right:28px}
+@keyframes tape{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.tape-track{animation:none}}
+
+.main{display:flex;flex-direction:column;gap:22px;padding-block:18px 28px;max-width:1280px;margin:0 auto}
+.notice{border:1px dashed var(--yellow);color:var(--yellow);padding:8px 12px}
+
+.summary{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:baseline}
+.idx{font-family:var(--f-display);font-size:54px;line-height:1;color:var(--yellow)}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.kv{display:flex;flex-direction:column;gap:2px}
+.kv b{font-weight:600;font-size:16px}
+.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--dim)}
+
+.panel{position:relative;border:4px double var(--line);background:var(--panel);padding:20px 14px 14px;min-width:0}
+.panel>h2{position:absolute;top:-14px;left:14px;margin:0;padding:0 8px;background:var(--bg);font-family:var(--f-display);font-weight:400;font-size:22px;line-height:24px;color:var(--cyan);letter-spacing:.06em}
+.cols{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:26px 22px;align-items:start}
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 22px;align-items:start}
+@media (max-width:980px){.cols{grid-template-columns:minmax(0,1fr)}.cols3{grid-template-columns:minmax(0,1fr)}}
+@media (min-width:640px) and (max-width:980px){.cols3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th{font-weight:400;text-align:right;color:var(--dim);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+td{text-align:right;padding:5px 8px;border-bottom:1px dotted var(--rule);white-space:nowrap}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:#111a17}
+tbody tr.on{background:var(--sel);box-shadow:inset 3px 0 0 var(--yellow)}
+tr[tabindex]:focus-visible{outline:2px solid var(--yellow);outline-offset:-2px}
+.em{display:flex;align-items:center;gap:10px}
+.em img{width:28px;height:28px;object-fit:contain}
+.tier{display:inline-block;font-size:11px;padding:0 5px;border:1px solid var(--line);color:var(--dim)}
+.tier.t2{border-color:var(--cyan);color:var(--cyan)}
+.tier.t3{border-color:var(--yellow);color:var(--yellow)}
+td svg{display:block;margin-left:auto}
+
+.dhead{display:flex;gap:14px;align-items:center}
+.dhead img{width:72px;height:72px;object-fit:contain;border:1px solid var(--rule);background:#000;padding:4px}
+.dname{font-family:var(--f-display);font-size:28px;line-height:1;word-break:break-all}
+.dprice{font-family:var(--f-display);font-size:46px;line-height:1;color:var(--yellow)}
+.chart{margin-top:14px;width:100%;height:auto;display:block}
+.chart text{fill:var(--dim);font-family:var(--f-body);font-size:10px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 12px;margin-top:12px}
+.hidden-val{color:var(--dim);letter-spacing:.2em}
+.cmd{margin-top:14px;background:#000;border:1px solid var(--rule);padding:10px 12px;font-size:13px}
+.cmd .p{color:var(--cyan)}
+.cmd .note{color:var(--dim)}
+.cmd.closed .p{color:var(--down)}
+.cursor{display:inline-block;width:8px;height:14px;background:var(--fg);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}}
+
+ol.lb{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ol.lb li{display:grid;grid-template-columns:2.2em minmax(0,1fr) auto;gap:8px;padding:4px 0;border-bottom:1px dotted var(--rule)}
+ol.lb li .r{color:var(--dim)}
+ol.lb li:first-child .r,ol.lb li:first-child .n{color:var(--yellow)}
+.n{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.empty{color:var(--dim)}
+.rules{margin:0;padding-left:1.4em;display:flex;flex-direction:column;gap:7px}
+.rules li::marker{color:var(--cyan)}
+.cmds{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px;margin:0}
+.cmds dt{color:var(--yellow);white-space:nowrap}
+.cmds dd{margin:0}
+.foot-note{color:var(--dim);font-size:12px;margin:10px 0 0}
+
+.fkeys{border-top:1px solid var(--line);background:#000;padding-block:6px calc(6px + env(safe-area-inset-bottom,0px))}
+.fkeys-in{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;align-items:center}
+.fkeys span{background:#0a6a6a;color:#000;padding:0 6px}
+.fkeys span b{color:#fff;font-weight:400;margin-right:4px}
+.fkeys .upd{margin-left:auto;color:var(--dim)}
+</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in gut">
+  <span class="brand">TISMIC EXCHANGE</span>
+  <span class="status">MARKET <span class="lamp" id="lamp">...</span></span>
+  <span class="sp"></span>
+  <span id="tick"></span>
+  <span class="clock" id="clock">--:--:--</span>
+</div></header>
+
+<div class="tape" aria-hidden="true"><div class="tape-track" id="tape"></div></div>
+
+<main class="main gut">
+  <div class="notice" id="notice" hidden></div>
+
+  <section class="summary" aria-label="Market summary">
+    <div class="kv"><span class="lbl">TSMX Index</span><span class="idx" id="idx">----</span></div>
+    <div class="kv"><span class="lbl">Last hour</span><b id="idxH">-</b></div>
+    <div class="kv"><span class="lbl">This stream</span><b id="idxS">-</b></div>
+    <div class="kv"><span class="lbl">Live hours traded</span><b id="hrs">-</b></div>
+    <div class="kv"><span class="lbl">Status</span><b id="statusLine">Loading market data...</b></div>
+  </section>
+
+  <div class="cols">
+    <section class="panel">
+      <h2>BOARD</h2>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Emote</th><th>Tier</th><th>Price</th><th>1H</th><th>24 live hrs</th><th>Trend</th><th>Shares held</th></tr></thead>
+          <tbody id="board"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" aria-live="polite">
+      <h2 id="dTitle">QUOTE</h2>
+      <div class="dhead">
+        <img id="dImg" alt="">
+        <div style="min-width:0">
+          <div class="dname" id="dName"></div>
+          <div id="dTier" class="lbl" style="margin-top:4px"></div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:14px;margin-top:12px;flex-wrap:wrap">
+        <span class="dprice" id="dPrice"></span><b id="dChg"></b>
+      </div>
+      <svg class="chart" id="chart" viewBox="0 0 600 220" role="img" aria-label="Price history"></svg>
+      <div class="stats">
+        <div class="kv"><span class="lbl">High (24 hrs)</span><b id="sHigh"></b></div>
+        <div class="kv"><span class="lbl">Low (24 hrs)</span><b id="sLow"></b></div>
+        <div class="kv"><span class="lbl">Uses this hour</span><b class="hidden-val">HIDDEN</b></div>
+        <div class="kv"><span class="lbl">Shares held</span><b id="sHeld"></b></div>
+        <div class="kv"><span class="lbl">Holders</span><b id="sHolders"></b></div>
+      </div>
+      <div class="cmd" id="cmd"></div>
+    </section>
+  </div>
+
+  <div class="cols3">
+    <section class="panel">
+      <h2>TOP TRADERS</h2>
+      <ol class="lb" id="lb"></ol>
+      <p class="foot-note">Net worth = Funny Money + shares at current price.</p>
+    </section>
+    <section class="panel">
+      <h2>HOW PRICES MOVE</h2>
+      <ol class="rules">
+        <li>Prices update at the top of every hour while LordTismic is live. Offline, the market is closed and prices freeze.</li>
+        <li>Each chatter counts once per emote per hour. Posting it 50 times counts the same as once.</li>
+        <li>An emote rises when it gets a bigger share of chat's emote use than its own recent average, and falls when it gets less.</li>
+        <li>Rises are capped at 10% per hour, and drops at 3%. Tier 2 rises at 2x and Tier 3 at 3x. All tiers fall at 1x.</li>
+        <li>No emote drops below $5.00.</li>
+        <li>Buying and selling does not move the price. Only chat does.</li>
+      </ol>
+    </section>
+    <section class="panel">
+      <h2>CHAT COMMANDS</h2>
+      <dl class="cmds">
+        <dt>!market</dt><dd>Status and top movers</dd>
+        <dt>!price RAGE</dt><dd>Price and last-hour change</dd>
+        <dt>!buy RAGE 5</dt><dd>Buy 5 shares (or max)</dd>
+        <dt>!sell RAGE all</dt><dd>Sell shares</dd>
+        <dt>!portfolio</dt><dd>Your cash, shares and net worth</dd>
+        <dt>!top</dt><dd>Richest traders</dd>
+      </dl>
+      <p class="foot-note" id="econ">Everyone starts with $1,000 Funny Money and gets $100 for each stream they chat in. 1% fee on every trade. Trading only works while the market is open. Funny Money has no real-world value.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="fkeys"><div class="fkeys-in gut">
+  <span><b>1</b>!market</span><span><b>2</b>!price</span><span><b>3</b>!buy</span><span><b>4</b>!sell</span><span><b>5</b>!portfolio</span><span><b>6</b>!top</span>
+  <span class="upd" id="upd"></span>
+</div></footer>
+
+<script>
+(function(){
+var D=null, sel=null;
+var $=function(id){return document.getElementById(id)};
+var fmt=function(v){return '$'+Number(v).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})};
+var pct=function(a,b){return b?(a/b-1)*100:0};
+var cls=function(p){return Math.abs(p)<.005?'flat':p>0?'up':'down'};
+var sgn=function(p){return (p>0?'+':'')+p.toFixed(2)+'%'};
+var arrow=function(p){return Math.abs(p)<.005?'=':p>0?'▲':'▼'};
+function el(tag,attrs,text){var e=document.createElement(tag);for(var k in attrs||{})e.setAttribute(k,attrs[k]);if(text!=null)e.textContent=text;return e}
+var css=getComputedStyle(document.documentElement);
+var C={up:css.getPropertyValue('--up').trim(),down:css.getPropertyValue('--down').trim(),flat:css.getPropertyValue('--dim').trim(),
+       line:css.getPropertyValue('--line').trim()};
+var STALE_MIN=90;
+
+function isOpen(){
+  if(!D||!D.open) return false;
+  return (Date.now()-Date.parse(D.updated_at))/60000 < STALE_MIN;
+}
+function last24(e){return e.history.slice(-25)}
+
+function spark(vals,w,h,color){
+  if(vals.length<2) vals=[vals[0],vals[0]];
+  var mn=Math.min.apply(null,vals),mx=Math.max.apply(null,vals),rg=mx-mn||1;
+  var pts=vals.map(function(v,i){return (i/(vals.length-1)*(w-4)+2).toFixed(1)+','+(h-2-(v-mn)/rg*(h-4)).toFixed(1)}).join(' ');
+  var last=pts.split(' ').pop().split(',');
+  return '<svg width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'"><polyline points="'+pts+'" fill="none" stroke="'+color+'" stroke-width="1.5"/><circle cx="'+last[0]+'" cy="'+last[1]+'" r="2" fill="'+color+'"/></svg>';
+}
+
+function chart(e){
+  var vals=last24(e); if(vals.length<2) vals=[vals[0],vals[0]];
+  var W=600,H=220,L=48,R=10,T=10,B=26,n=vals.length;
+  var mn=Math.min.apply(null,vals),mx=Math.max.apply(null,vals);
+  var pad=(mx-mn)*.1||Math.max(1,mx*.05); mn=Math.max(0,mn-pad); mx=mx+pad;
+  var x=function(i){return L+i/(n-1)*(W-L-R)}, y=function(v){return T+(1-(v-mn)/(mx-mn))*(H-T-B)};
+  var s='';
+  for(var g=0;g<=4;g++){var v=mn+(mx-mn)*g/4,yy=y(v).toFixed(1);
+    s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+yy+'" y2="'+yy+'" stroke="'+C.line+'" stroke-opacity=".25" stroke-dasharray="2 4"/>';
+    s+='<text x="'+(L-6)+'" y="'+(+yy+3)+'" text-anchor="end">$'+v.toFixed(v<10?2:0)+'</text>';}
+  var marks=n>6?[0,Math.round((n-1)/3),Math.round(2*(n-1)/3),n-1]:[0,n-1];
+  marks.forEach(function(i){s+='<text x="'+x(i).toFixed(1)+'" y="'+(H-8)+'" text-anchor="middle">'+(i===n-1?'now':'-'+(n-1-i)+'h')+'</text>'});
+  var col=C[cls(pct(vals[n-1],vals[0]))];
+  var pts=vals.map(function(v,i){return x(i).toFixed(1)+','+y(v).toFixed(1)}).join(' ');
+  s+='<polygon points="'+x(0)+','+(H-B)+' '+pts+' '+x(n-1)+','+(H-B)+'" fill="'+col+'" fill-opacity=".08"/>';
+  s+='<polyline points="'+pts+'" fill="none" stroke="'+col+'" stroke-width="2" stroke-linejoin="round"/>';
+  s+='<circle cx="'+x(n-1)+'" cy="'+y(vals[n-1])+'" r="4" fill="'+col+'"/>';
+  return s;
+}
+
+function render(){
+  var open=isOpen();
+  var lamp=$('lamp'); lamp.textContent=open?'OPEN':'CLOSED'; lamp.className='lamp '+(open?'open':'closed');
+  $('statusLine').textContent=open?'Live. Trading open in chat.':'Offline. Prices frozen.';
+  var stale=D.open&&!open;
+  $('notice').hidden=!stale;
+  if(stale) $('notice').textContent='The market bot has not reported in for a while. Prices shown are the last known values.';
+
+  var em=D.emotes, n=em.length, avg=function(f){return em.reduce(function(s,e){return s+f(e)},0)/n/D.settings.start_price*1000};
+  var idxPrev=avg(function(e){return e.prev});
+  $('idx').textContent=D.index.toFixed(1);
+  var ih=pct(D.index,idxPrev); $('idxH').textContent=arrow(ih)+' '+sgn(ih); $('idxH').className=cls(ih);
+  if(D.stream_open_index&&open){var is=pct(D.index,D.stream_open_index);$('idxS').textContent=arrow(is)+' '+sgn(is);$('idxS').className=cls(is);}
+  else{$('idxS').textContent='-';$('idxS').className='flat';}
+  $('hrs').textContent=D.ticks;
+
+  var tape=em.map(function(e){var p=pct(e.price,e.prev);return '<span>'+e.name+' '+e.price.toFixed(2)+' <b class="'+cls(p)+'">'+arrow(p)+' '+sgn(p)+'</b></span>'}).join('');
+  $('tape').innerHTML=tape+tape;
+
+  var sorted=em.slice().sort(function(a,b){return b.price-a.price});
+  if(sel===null||!em.some(function(e){return e.name===sel})) sel=sorted[0].name;
+  var tb=$('board'); tb.textContent='';
+  sorted.forEach(function(e){
+    var p1=pct(e.price,e.prev), h=last24(e), p24=pct(e.price,h[0]);
+    var tr=el('tr',{tabindex:'0','data-n':e.name});
+    var td=el('td'), sp=el('span',{'class':'em'}); sp.appendChild(el('img',{src:e.img,alt:'',loading:'lazy'})); sp.appendChild(document.createTextNode(e.name)); td.appendChild(sp); tr.appendChild(td);
+    td=el('td'); td.appendChild(el('span',{'class':'tier t'+e.tier},'T'+e.tier)); tr.appendChild(td);
+    tr.appendChild(el('td',{},fmt(e.price)));
+    tr.appendChild(el('td',{'class':cls(p1)},arrow(p1)+' '+sgn(p1)));
+    tr.appendChild(el('td',{'class':cls(p24)},sgn(p24)));
+    td=el('td'); td.innerHTML=spark(h,96,24,C[cls(p24)]); tr.appendChild(td);
+    tr.appendChild(el('td',{},Number(e.shares_held).toLocaleString()));
+    tb.appendChild(tr);
+  });
+
+  var lb=$('lb'); lb.textContent='';
+  if(!D.leaderboard.length) lb.appendChild(el('li',{'class':'empty'},'No traders yet. Type !buy in chat to be first.'));
+  D.leaderboard.forEach(function(t,i){
+    var li=el('li'); li.appendChild(el('span',{'class':'r'},(i+1)+'.')); li.appendChild(el('span',{'class':'n'},t.login)); li.appendChild(el('span',{},fmt(t.worth))); lb.appendChild(li);
+  });
+
+  var s=D.settings;
+  $('econ').textContent='Everyone starts with '+fmt(s.start_cash).replace('.00','')+' Funny Money and gets '+fmt(s.stipend).replace('.00','')+' for each stream they chat in. '+
+    (s.fee*100)+'% fee on every trade. Trading only works while the market is open. Funny Money has no real-world value.';
+  if(D.updated_at){var d=new Date(D.updated_at);$('upd').textContent='Data from '+d.toLocaleString([], {month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});}
+  renderDetail(); clockTick();
+}
+
+function renderDetail(){
+  var e=D.emotes.filter(function(x){return x.name===sel})[0]; if(!e) return;
+  var p1=pct(e.price,e.prev), h=last24(e), open=isOpen();
+  [].forEach.call($('board').children,function(tr){tr.classList.toggle('on',tr.getAttribute('data-n')===sel)});
+  $('dTitle').textContent='QUOTE: '+e.name;
+  $('dImg').src=e.img; $('dImg').alt=e.name;
+  $('dName').textContent=e.name;
+  $('dTier').textContent='Tier '+e.tier+(e.tier>1?'  |  rises at '+e.tier+'x, falls at 1x':'  |  standard moves');
+  $('dPrice').textContent=fmt(e.price);
+  $('dChg').textContent=arrow(p1)+' '+sgn(p1)+' last hour'; $('dChg').className=cls(p1);
+  $('chart').innerHTML=chart(e);
+  $('sHigh').textContent=fmt(Math.max.apply(null,h));
+  $('sLow').textContent=fmt(Math.min.apply(null,h));
+  $('sHeld').textContent=Number(e.shares_held).toLocaleString();
+  $('sHolders').textContent=e.holders;
+  var cmd=$('cmd'); cmd.className='cmd'+(open?'':' closed'); cmd.textContent='';
+  if(open){
+    cmd.appendChild(el('span',{'class':'p'},'> ')); cmd.appendChild(document.createTextNode('!buy '+e.name+' 5'));
+    cmd.appendChild(el('br')); cmd.appendChild(el('span',{'class':'note'},'Costs '+fmt(e.price*5*(1+D.settings.fee))+' including the fee. '));
+    cmd.appendChild(el('span',{'class':'cursor'}));
+  } else {
+    cmd.appendChild(el('span',{'class':'p'},'MARKET CLOSED.')); cmd.appendChild(el('br'));
+    cmd.appendChild(el('span',{'class':'note'},'Trading reopens when LordTismic goes live. Prices are frozen at the last close.'));
+  }
+}
+
+$('board').addEventListener('click',function(ev){var tr=ev.target.closest('tr');if(tr){sel=tr.getAttribute('data-n');renderDetail();}});
+$('board').addEventListener('keydown',function(ev){if((ev.key==='Enter'||ev.key===' ')&&ev.target.matches('tr')){ev.preventDefault();sel=ev.target.getAttribute('data-n');renderDetail();}});
+
+function pad2(n){return (n<10?'0':'')+n}
+function clockTick(){
+  var d=new Date();
+  $('clock').textContent=pad2(d.getHours())+':'+pad2(d.getMinutes())+':'+pad2(d.getSeconds());
+  var left=3600-(d.getMinutes()*60+d.getSeconds());
+  $('tick').textContent=D&&isOpen()?'NEXT TICK '+pad2(Math.floor(left/60))+':'+pad2(left%60):'NEXT TICK: AT GO-LIVE';
+}
+
+function load(){
+  fetch('market.json?t='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
+    .then(function(j){D=j;render();})
+    .catch(function(){if(!D){$('statusLine').textContent='Could not load market data. Refresh to try again.';}});
+}
+load(); setInterval(load,120000); setInterval(clockTick,1000);
+})();
+</script>
+</body>
+</html>
