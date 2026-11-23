@@ -1,0 +1,185 @@
+{
+ "updated_at": "2026-11-23T09:25:18-06:00",
+ "open": false,
+ "last_tick": null,
+ "index": 1000.0,
+ "stream_open_index": null,
+ "ticks": 0,
+ "settings": {
+  "start_price": 50,
+  "start_cash": 1000,
+  "stipend": 100,
+  "fee": 0.01
+ },
+ "emotes": [
+  {
+   "name": "tismicCLEANUP",
+   "tier": 1,
+   "img": "emotes/tismicCLEANUP.png",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  },
+  {
+   "name": "tismicDUCTED",
+   "tier": 1,
+   "img": "emotes/tismicDUCTED.png",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  },
+  {
+   "name": "tismicGRIDDLE",
+   "tier": 1,
+   "img": "emotes/tismicGRIDDLE.png",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  },
+  {
+   "name": "tismicHANGINTHERE",
+   "tier": 1,
+   "img": "emotes/tismicHANGINTHERE.png",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  },
+  {
+   "name": "tismicKRYABOUTIT",
+   "tier": 3,
+   "img": "emotes/tismicKRYABOUTIT.png",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  },
+  {
+   "name": "tismicLIZZZ",
+   "tier": 1,
+   "img": "emotes/tismicLIZZZ.png",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  },
+  {
+   "name": "tismicPARTY",
+   "tier": 2,
+   "img": "emotes/tismicPARTY.png",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  },
+  {
+   "name": "tismicPLEASE",
+   "tier": 1,
+   "img": "emotes/tismicPLEASE.gif",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  },
+  {
+   "name": "tismicRAGE",
+   "tier": 1,
+   "img": "emotes/tismicRAGE.gif",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  },
+  {
+   "name": "tismicRATKING",
+   "tier": 1,
+   "img": "emotes/tismicRATKING.png",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  },
+  {
+   "name": "tismicSAVEME",
+   "tier": 1,
+   "img": "emotes/tismicSAVEME.png",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  },
+  {
+   "name": "tismicTHANKYOU",
+   "tier": 1,
+   "img": "emotes/tismicTHANKYOU.png",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  },
+  {
+   "name": "tismicTOM",
+   "tier": 1,
+   "img": "emotes/tismicTOM.png",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  },
+  {
+   "name": "tismicYOULOSE",
+   "tier": 1,
+   "img": "emotes/tismicYOULOSE.png",
+   "price": 50.0,
+   "prev": 50.0,
+   "history": [
+    50
+   ],
+   "shares_held": 0,
+   "holders": 0
+  }
+ ],
+ "leaderboard": []
+}
