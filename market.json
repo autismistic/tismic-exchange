@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-23T13:25:59-06:00",
+ "updated_at": "2026-11-23T13:30:09-06:00",
  "open": true,
  "last_tick": "2026-11-23T13:00:01-06:00",
  "index": 979.3,
@@ -65,8 +65,8 @@
     50.0,
     48.5
    ],
-   "shares_held": 0,
-   "holders": 0
+   "shares_held": 6,
+   "holders": 1
   },
   {
    "name": "tismicKRYABOUTIT",
@@ -93,8 +93,8 @@
     50.0,
     48.5
    ],
-   "shares_held": 0,
-   "holders": 0
+   "shares_held": 20,
+   "holders": 1
   },
   {
    "name": "tismicPARTY",
@@ -107,8 +107,8 @@
     50.0,
     48.5
    ],
-   "shares_held": 0,
-   "holders": 0
+   "shares_held": 4,
+   "holders": 1
   },
   {
    "name": "tismicPLEASE",
@@ -219,16 +219,16 @@
    "worth": 1129.5
   },
   {
-   "login": "somerasta",
-   "worth": 1100.0
-  },
-  {
    "login": "crazybacon621",
    "worth": 1100.0
   },
   {
    "login": "georgiawithak",
-   "worth": 1099.45
+   "worth": 1094.6
+  },
+  {
+   "login": "somerasta",
+   "worth": 1090.3
   }
  ]
 }
