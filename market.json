@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-23T16:00:01-06:00",
+ "updated_at": "2026-11-23T16:02:14-06:00",
  "open": true,
  "last_tick": "2026-11-23T16:00:01-06:00",
  "index": 973.1,
@@ -26,8 +26,8 @@
     45.64,
     45.64
    ],
-   "shares_held": 0,
-   "holders": 0
+   "shares_held": 25,
+   "holders": 1
   },
   {
    "name": "tismicDUCTED",
@@ -213,8 +213,8 @@
     51.76,
     51.76
    ],
-   "shares_held": 23,
-   "holders": 1
+   "shares_held": 0,
+   "holders": 0
   },
   {
    "name": "tismicTOM",
@@ -258,7 +258,7 @@
   },
   {
    "login": "topmarine59",
-   "worth": 1193.19
+   "worth": 1169.88
   },
   {
    "login": "georgiawithak",
