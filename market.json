@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-24T12:37:24-06:00",
+ "updated_at": "2026-11-24T13:00:01-06:00",
  "open": true,
- "last_tick": "2026-11-24T12:00:01-06:00",
- "index": 983.0,
+ "last_tick": "2026-11-24T13:00:01-06:00",
+ "index": 978.6,
  "stream_open_index": 963.3,
- "ticks": 8,
+ "ticks": 9,
  "settings": {
   "start_price": 50,
   "start_cash": 1000,
@@ -16,8 +16,8 @@
    "name": "tismicCLEANUP",
    "tier": 1,
    "img": "emotes/tismicCLEANUP.png",
-   "price": 55.22,
-   "prev": 50.2,
+   "price": 60.74,
+   "prev": 55.22,
    "history": [
     50,
     50.0,
@@ -27,7 +27,8 @@
     45.64,
     50.2,
     50.2,
-    55.22
+    55.22,
+    60.74
    ],
    "shares_held": 2,
    "holders": 1
@@ -36,8 +37,8 @@
    "name": "tismicDUCTED",
    "tier": 1,
    "img": "emotes/tismicDUCTED.png",
-   "price": 42.94,
-   "prev": 44.27,
+   "price": 41.65,
+   "prev": 42.94,
    "history": [
     50,
     50.0,
@@ -47,7 +48,8 @@
     45.64,
     44.27,
     44.27,
-    42.94
+    42.94,
+    41.65
    ],
    "shares_held": 0,
    "holders": 0
@@ -56,8 +58,8 @@
    "name": "tismicGRIDDLE",
    "tier": 1,
    "img": "emotes/tismicGRIDDLE.png",
-   "price": 42.94,
-   "prev": 44.27,
+   "price": 41.65,
+   "prev": 42.94,
    "history": [
     50,
     50.0,
@@ -67,7 +69,8 @@
     45.64,
     44.27,
     44.27,
-    42.94
+    42.94,
+    41.65
    ],
    "shares_held": 0,
    "holders": 0
@@ -76,8 +79,8 @@
    "name": "tismicHANGINTHERE",
    "tier": 1,
    "img": "emotes/tismicHANGINTHERE.png",
-   "price": 55.22,
-   "prev": 50.2,
+   "price": 53.56,
+   "prev": 55.22,
    "history": [
     50,
     50.0,
@@ -87,7 +90,8 @@
     51.75,
     50.2,
     50.2,
-    55.22
+    55.22,
+    53.56
    ],
    "shares_held": 6,
    "holders": 1
@@ -96,8 +100,8 @@
    "name": "tismicKRYABOUTIT",
    "tier": 3,
    "img": "emotes/tismicKRYABOUTIT.png",
-   "price": 42.94,
-   "prev": 44.27,
+   "price": 41.65,
+   "prev": 42.94,
    "history": [
     50,
     50.0,
@@ -107,7 +111,8 @@
     45.64,
     44.27,
     44.27,
-    42.94
+    42.94,
+    41.65
    ],
    "shares_held": 0,
    "holders": 0
@@ -116,8 +121,8 @@
    "name": "tismicLIZZZ",
    "tier": 1,
    "img": "emotes/tismicLIZZZ.png",
-   "price": 71.02,
-   "prev": 64.56,
+   "price": 78.12,
+   "prev": 71.02,
    "history": [
     50,
     50.0,
@@ -127,7 +132,8 @@
     58.69,
     64.56,
     64.56,
-    71.02
+    71.02,
+    78.12
    ],
    "shares_held": 20,
    "holders": 1
@@ -136,8 +142,8 @@
    "name": "tismicPARTY",
    "tier": 2,
    "img": "emotes/tismicPARTY.png",
-   "price": 65.71,
-   "prev": 54.76,
+   "price": 63.74,
+   "prev": 65.71,
    "history": [
     50,
     50.0,
@@ -147,7 +153,8 @@
     56.45,
     54.76,
     54.76,
-    65.71
+    65.71,
+    63.74
    ],
    "shares_held": 4,
    "holders": 1
@@ -156,8 +163,8 @@
    "name": "tismicPLEASE",
    "tier": 1,
    "img": "emotes/tismicPLEASE.gif",
-   "price": 42.94,
-   "prev": 44.27,
+   "price": 41.65,
+   "prev": 42.94,
    "history": [
     50,
     50.0,
@@ -167,7 +174,8 @@
     45.64,
     44.27,
     44.27,
-    42.94
+    42.94,
+    41.65
    ],
    "shares_held": 0,
    "holders": 0
@@ -176,8 +184,8 @@
    "name": "tismicRAGE",
    "tier": 1,
    "img": "emotes/tismicRAGE.gif",
-   "price": 48.69,
-   "prev": 50.2,
+   "price": 47.23,
+   "prev": 48.69,
    "history": [
     50,
     50.0,
@@ -187,7 +195,8 @@
     51.75,
     50.2,
     50.2,
-    48.69
+    48.69,
+    47.23
    ],
    "shares_held": 23,
    "holders": 3
@@ -196,8 +205,8 @@
    "name": "tismicRATKING",
    "tier": 1,
    "img": "emotes/tismicRATKING.png",
-   "price": 42.94,
-   "prev": 44.27,
+   "price": 41.65,
+   "prev": 42.94,
    "history": [
     50,
     50.0,
@@ -207,7 +216,8 @@
     45.64,
     44.27,
     44.27,
-    42.94
+    42.94,
+    41.65
    ],
    "shares_held": 0,
    "holders": 0
@@ -216,8 +226,8 @@
    "name": "tismicSAVEME",
    "tier": 1,
    "img": "emotes/tismicSAVEME.png",
-   "price": 42.94,
-   "prev": 44.27,
+   "price": 41.65,
+   "prev": 42.94,
    "history": [
     50,
     50.0,
@@ -227,7 +237,8 @@
     45.64,
     44.27,
     44.27,
-    42.94
+    42.94,
+    41.65
    ],
    "shares_held": 0,
    "holders": 0
@@ -236,8 +247,8 @@
    "name": "tismicTHANKYOU",
    "tier": 1,
    "img": "emotes/tismicTHANKYOU.png",
-   "price": 48.7,
-   "prev": 50.21,
+   "price": 48.43,
+   "prev": 48.7,
    "history": [
     50,
     50.0,
@@ -247,7 +258,8 @@
     51.76,
     50.21,
     50.21,
-    48.7
+    48.7,
+    48.43
    ],
    "shares_held": 30,
    "holders": 1
@@ -256,8 +268,8 @@
    "name": "tismicTOM",
    "tier": 1,
    "img": "emotes/tismicTOM.png",
-   "price": 42.94,
-   "prev": 44.27,
+   "price": 41.65,
+   "prev": 42.94,
    "history": [
     50,
     50.0,
@@ -267,7 +279,8 @@
     45.64,
     44.27,
     44.27,
-    42.94
+    42.94,
+    41.65
    ],
    "shares_held": 0,
    "holders": 0
@@ -276,8 +289,8 @@
    "name": "tismicYOULOSE",
    "tier": 1,
    "img": "emotes/tismicYOULOSE.png",
-   "price": 42.94,
-   "prev": 44.27,
+   "price": 41.65,
+   "prev": 42.94,
    "history": [
     50,
     50.0,
@@ -287,7 +300,8 @@
     45.64,
     44.27,
     44.27,
-    42.94
+    42.94,
+    41.65
    ],
    "shares_held": 0,
    "holders": 0
@@ -296,15 +310,15 @@
  "leaderboard": [
   {
    "login": "somerasta",
-   "worth": 1642.59
+   "worth": 1792.71
   },
   {
    "login": "topmarine59",
-   "worth": 1488.9
+   "worth": 1480.8
   },
   {
    "login": "georgiawithak",
-   "worth": 1297.45
+   "worth": 1278.15
   },
   {
    "login": "crazybacon621",
@@ -312,7 +326,7 @@
   },
   {
    "login": "jimmorrison_",
-   "worth": 1161.78
+   "worth": 1132.58
   },
   {
    "login": "dirtydieself250",
@@ -330,12 +344,12 @@
  "traders": {
   "topmarine59": {
    "cash": 27.9,
-   "worth": 1488.9,
+   "worth": 1480.8,
    "holdings": [
     {
      "emote": "tismicTHANKYOU",
      "shares": 30,
-     "price": 48.7
+     "price": 48.43
     }
    ],
    "history": [
@@ -370,6 +384,10 @@
     [
      "2026-11-24T12:00:01-06:00",
      1518.42
+    ],
+    [
+     "2026-11-24T13:00:01-06:00",
+     1480.8
     ]
    ],
    "trades": [
@@ -473,22 +491,22 @@
   },
   "somerasta": {
    "cash": 14.37,
-   "worth": 1642.59,
+   "worth": 1792.71,
    "holdings": [
     {
      "emote": "tismicLIZZZ",
      "shares": 20,
-     "price": 71.02
+     "price": 78.12
     },
     {
      "emote": "tismicCLEANUP",
      "shares": 2,
-     "price": 55.22
+     "price": 60.74
     },
     {
      "emote": "tismicRAGE",
      "shares": 2,
-     "price": 48.69
+     "price": 47.23
     }
    ],
    "history": [
@@ -523,6 +541,10 @@
     [
      "2026-11-24T12:00:01-06:00",
      1642.59
+    ],
+    [
+     "2026-11-24T13:00:01-06:00",
+     1792.71
     ]
    ],
    "trades": [
@@ -588,18 +610,22 @@
     [
      "2026-11-24T12:00:01-06:00",
      1200.0
+    ],
+    [
+     "2026-11-24T13:00:01-06:00",
+     1200.0
     ]
    ],
    "trades": []
   },
   "jimmorrison_": {
    "cash": 187.98,
-   "worth": 1161.78,
+   "worth": 1132.58,
    "holdings": [
     {
      "emote": "tismicRAGE",
      "shares": 20,
-     "price": 48.69
+     "price": 47.23
     }
    ],
    "history": [
@@ -634,6 +660,10 @@
     [
      "2026-11-24T12:00:01-06:00",
      1161.78
+    ],
+    [
+     "2026-11-24T13:00:01-06:00",
+     1132.58
     ]
    ],
    "trades": [
@@ -657,22 +687,22 @@
   },
   "georgiawithak": {
    "cash": 654.6,
-   "worth": 1297.45,
+   "worth": 1278.15,
    "holdings": [
     {
      "emote": "tismicHANGINTHERE",
      "shares": 6,
-     "price": 55.22
+     "price": 53.56
     },
     {
      "emote": "tismicPARTY",
      "shares": 4,
-     "price": 65.71
+     "price": 63.74
     },
     {
      "emote": "tismicRAGE",
      "shares": 1,
-     "price": 48.69
+     "price": 47.23
     }
    ],
    "history": [
@@ -699,6 +729,10 @@
     [
      "2026-11-24T12:00:01-06:00",
      1297.45
+    ],
+    [
+     "2026-11-24T13:00:01-06:00",
+     1278.15
     ]
    ],
    "trades": [
@@ -764,6 +798,10 @@
     [
      "2026-11-24T12:00:01-06:00",
      1100.0
+    ],
+    [
+     "2026-11-24T13:00:01-06:00",
+     1100.0
     ]
    ],
    "trades": []
@@ -784,6 +822,10 @@
     [
      "2026-11-24T12:00:01-06:00",
      1100.0
+    ],
+    [
+     "2026-11-24T13:00:01-06:00",
+     1100.0
     ]
    ],
    "trades": []
@@ -799,6 +841,10 @@
     ],
     [
      "2026-11-24T12:00:01-06:00",
+     1100.0
+    ],
+    [
+     "2026-11-24T13:00:01-06:00",
      1100.0
     ]
    ],
