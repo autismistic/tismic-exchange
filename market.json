@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-24T11:47:29-06:00",
+ "updated_at": "2026-11-24T11:47:51-06:00",
  "open": true,
  "last_tick": "2026-11-24T11:00:01-06:00",
  "index": 963.3,
@@ -180,7 +180,7 @@
     50.2,
     50.2
    ],
-   "shares_held": 13,
+   "shares_held": 23,
    "holders": 3
   },
   {
@@ -298,7 +298,7 @@
   },
   {
    "login": "jimmorrison_",
-   "worth": 1197.0
+   "worth": 1191.98
   },
   {
    "login": "dirtydieself250",
@@ -551,12 +551,12 @@
    "trades": []
   },
   "jimmorrison_": {
-   "cash": 695.0,
-   "worth": 1197.0,
+   "cash": 187.98,
+   "worth": 1191.98,
    "holdings": [
     {
      "emote": "tismicRAGE",
-     "shares": 10,
+     "shares": 20,
      "price": 50.2
     }
    ],
@@ -591,6 +591,14 @@
     ]
    ],
    "trades": [
+    {
+     "at": "2026-11-24T11:47:51-06:00",
+     "side": "buy",
+     "emote": "tismicRAGE",
+     "shares": 10,
+     "price": 50.2,
+     "fee": 5.02
+    },
     {
      "at": "2026-11-23T11:12:01-06:00",
      "side": "buy",
