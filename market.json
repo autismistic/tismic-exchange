@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-24T11:02:39-06:00",
+ "updated_at": "2026-11-24T11:47:29-06:00",
  "open": true,
  "last_tick": "2026-11-24T11:00:01-06:00",
  "index": 963.3,
@@ -28,8 +28,8 @@
     50.2,
     50.2
    ],
-   "shares_held": 27,
-   "holders": 1
+   "shares_held": 29,
+   "holders": 2
   },
   {
    "name": "tismicDUCTED",
@@ -282,7 +282,7 @@
  "leaderboard": [
   {
    "login": "somerasta",
-   "worth": 1507.37
+   "worth": 1506.37
   },
   {
    "login": "topmarine59",
@@ -290,14 +290,18 @@
   },
   {
    "login": "georgiawithak",
-   "worth": 1125.04
-  },
-  {
-   "login": "dirtydieself250",
-   "worth": 1100.0
+   "worth": 1225.04
   },
   {
    "login": "crazybacon621",
+   "worth": 1200.0
+  },
+  {
+   "login": "jimmorrison_",
+   "worth": 1197.0
+  },
+  {
+   "login": "dirtydieself250",
    "worth": 1100.0
   },
   {
@@ -307,10 +311,6 @@
   {
    "login": "infinitelifeplays",
    "worth": 1100.0
-  },
-  {
-   "login": "jimmorrison_",
-   "worth": 1097.0
   }
  ],
  "traders": {
@@ -438,13 +438,18 @@
    ]
   },
   "somerasta": {
-   "cash": 115.77,
-   "worth": 1507.37,
+   "cash": 14.37,
+   "worth": 1506.37,
    "holdings": [
     {
      "emote": "tismicLIZZZ",
      "shares": 20,
      "price": 64.56
+    },
+    {
+     "emote": "tismicCLEANUP",
+     "shares": 2,
+     "price": 50.2
     },
     {
      "emote": "tismicRAGE",
@@ -484,6 +489,14 @@
    ],
    "trades": [
     {
+     "at": "2026-11-24T11:47:29-06:00",
+     "side": "buy",
+     "emote": "tismicCLEANUP",
+     "shares": 2,
+     "price": 50.2,
+     "fee": 1.0
+    },
+    {
      "at": "2026-11-23T16:28:18-06:00",
      "side": "buy",
      "emote": "tismicRAGE",
@@ -502,8 +515,8 @@
    ]
   },
   "crazybacon621": {
-   "cash": 1100.0,
-   "worth": 1100.0,
+   "cash": 1200.0,
+   "worth": 1200.0,
    "holdings": [],
    "history": [
     [
@@ -538,8 +551,8 @@
    "trades": []
   },
   "jimmorrison_": {
-   "cash": 595.0,
-   "worth": 1097.0,
+   "cash": 695.0,
+   "worth": 1197.0,
    "holdings": [
     {
      "emote": "tismicRAGE",
@@ -589,8 +602,8 @@
    ]
   },
   "georgiawithak": {
-   "cash": 554.6,
-   "worth": 1125.04,
+   "cash": 654.6,
+   "worth": 1225.04,
    "holdings": [
     {
      "emote": "tismicHANGINTHERE",
