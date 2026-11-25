@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-11-25T09:50:14-06:00",
- "open": false,
+ "updated_at": "2026-11-25T10:59:45-06:00",
+ "open": true,
  "last_tick": "2026-11-24T17:30:20-06:00",
  "index": 989.9,
- "stream_open_index": 963.3,
+ "stream_open_index": 989.9,
  "ticks": 14,
  "settings": {
   "start_price": 50,
