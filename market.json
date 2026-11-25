@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-25T12:03:21-06:00",
+ "updated_at": "2026-11-25T12:19:08-06:00",
  "open": true,
  "last_tick": "2026-11-25T12:00:01-06:00",
  "index": 986.7,
@@ -121,7 +121,7 @@
     45.99,
     50.59
    ],
-   "shares_held": 55,
+   "shares_held": 58,
    "holders": 2
   },
   {
@@ -345,8 +345,8 @@
     77.95,
     75.61
    ],
-   "shares_held": 2,
-   "holders": 1
+   "shares_held": 0,
+   "holders": 0
   },
   {
    "name": "tismicTOM",
@@ -408,7 +408,7 @@
  "leaderboard": [
   {
    "login": "somerasta",
-   "worth": 2655.37
+   "worth": 2652.34
   },
   {
    "login": "topmarine59",
@@ -636,18 +636,13 @@
    ]
   },
   "somerasta": {
-   "cash": 25.24,
-   "worth": 2655.37,
+   "cash": 21.66,
+   "worth": 2652.34,
    "holdings": [
     {
      "emote": "tismicHANGINTHERE",
-     "shares": 49,
+     "shares": 52,
      "price": 50.59
-    },
-    {
-     "emote": "tismicTHANKYOU",
-     "shares": 2,
-     "price": 75.61
     }
    ],
    "history": [
@@ -717,6 +712,22 @@
     ]
    ],
    "trades": [
+    {
+     "at": "2026-11-25T12:19:08-06:00",
+     "side": "buy",
+     "emote": "tismicHANGINTHERE",
+     "shares": 3,
+     "price": 50.59,
+     "fee": 1.52
+    },
+    {
+     "at": "2026-11-25T12:18:55-06:00",
+     "side": "sell",
+     "emote": "tismicTHANKYOU",
+     "shares": 2,
+     "price": 75.61,
+     "fee": 1.51
+    },
     {
      "at": "2026-11-25T12:03:21-06:00",
      "side": "buy",
