@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-25T12:00:01-06:00",
+ "updated_at": "2026-11-25T12:03:21-06:00",
  "open": true,
  "last_tick": "2026-11-25T12:00:01-06:00",
  "index": 986.7,
@@ -121,8 +121,8 @@
     45.99,
     50.59
    ],
-   "shares_held": 6,
-   "holders": 1
+   "shares_held": 55,
+   "holders": 2
   },
   {
    "name": "tismicKRYABOUTIT",
@@ -177,8 +177,8 @@
     120.49,
     116.88
    ],
-   "shares_held": 20,
-   "holders": 1
+   "shares_held": 0,
+   "holders": 0
   },
   {
    "name": "tismicPARTY",
@@ -261,8 +261,8 @@
     40.57,
     39.35
    ],
-   "shares_held": 42,
-   "holders": 3
+   "shares_held": 40,
+   "holders": 2
   },
   {
    "name": "tismicRATKING",
@@ -408,7 +408,7 @@
  "leaderboard": [
   {
    "login": "somerasta",
-   "worth": 2704.33
+   "worth": 2655.37
   },
   {
    "login": "topmarine59",
@@ -636,23 +636,18 @@
    ]
   },
   "somerasta": {
-   "cash": 136.81,
-   "worth": 2704.33,
+   "cash": 25.24,
+   "worth": 2655.37,
    "holdings": [
     {
-     "emote": "tismicLIZZZ",
-     "shares": 20,
-     "price": 116.88
+     "emote": "tismicHANGINTHERE",
+     "shares": 49,
+     "price": 50.59
     },
     {
      "emote": "tismicTHANKYOU",
      "shares": 2,
      "price": 75.61
-    },
-    {
-     "emote": "tismicRAGE",
-     "shares": 2,
-     "price": 39.35
     }
    ],
    "history": [
@@ -722,6 +717,38 @@
     ]
    ],
    "trades": [
+    {
+     "at": "2026-11-25T12:03:21-06:00",
+     "side": "buy",
+     "emote": "tismicHANGINTHERE",
+     "shares": 45,
+     "price": 50.59,
+     "fee": 22.77
+    },
+    {
+     "at": "2026-11-25T12:03:14-06:00",
+     "side": "sell",
+     "emote": "tismicLIZZZ",
+     "shares": 20,
+     "price": 116.88,
+     "fee": 23.38
+    },
+    {
+     "at": "2026-11-25T12:01:36-06:00",
+     "side": "buy",
+     "emote": "tismicHANGINTHERE",
+     "shares": 4,
+     "price": 50.59,
+     "fee": 2.02
+    },
+    {
+     "at": "2026-11-25T12:01:21-06:00",
+     "side": "sell",
+     "emote": "tismicRAGE",
+     "shares": 2,
+     "price": 39.35,
+     "fee": 0.79
+    },
     {
      "at": "2026-11-24T13:02:12-06:00",
      "side": "buy",
