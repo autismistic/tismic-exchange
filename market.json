@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T11:02:32-06:00",
+ "updated_at": "2026-11-27T11:06:56-06:00",
  "open": true,
  "last_tick": "2026-11-25T16:04:51-06:00",
  "index": 942.9,
@@ -306,8 +306,8 @@
     44.8,
     49.28
    ],
-   "shares_held": 40,
-   "holders": 2
+   "shares_held": 61,
+   "holders": 3
   },
   {
    "name": "tismicRATKING",
@@ -511,6 +511,10 @@
   {
    "login": "infinitelifeplays",
    "worth": 1100.0
+  },
+  {
+   "login": "lordtismic",
+   "worth": 1089.65
   }
  ],
  "traders": {
@@ -1509,6 +1513,36 @@
     ]
    ],
    "trades": []
+  },
+  "lordtismic": {
+   "cash": 54.77,
+   "worth": 1089.65,
+   "holdings": [
+    {
+     "emote": "tismicRAGE",
+     "shares": 21,
+     "price": 49.28
+    }
+   ],
+   "history": [],
+   "trades": [
+    {
+     "at": "2026-11-27T11:06:56-06:00",
+     "side": "buy",
+     "emote": "tismicRAGE",
+     "shares": 3,
+     "price": 49.28,
+     "fee": 1.48
+    },
+    {
+     "at": "2026-11-27T11:06:43-06:00",
+     "side": "buy",
+     "emote": "tismicRAGE",
+     "shares": 18,
+     "price": 49.28,
+     "fee": 8.87
+    }
+   ]
   }
  }
 }
